@@ -1,0 +1,533 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=x-x-big5">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>電子圖書館多媒體資訊服務系統之建構方法發表人：</title>
+</head>
+
+<body>
+
+<p align="left"><font color="#008000" size="6"><strong>電子圖書館多媒體資訊服務系統之建構方法</strong></font><br>
+<br>
+<strong>發表人： 余千智 蘇佩芬<br>
+學校單位 : 國立政治大學</strong><br>
+<br>
+</p>
+
+<p><font size="5"><strong>摘 要</strong></font><font size="4"><strong><br>
+</strong></font><br>
+<br>
+　　由於資訊科技的快速演進及國際網際網路資源的蓬勃發展，圖書館電子<br>
+化及數位圖書館的需求趨勢日益顯著。本研究之目的即在探討電子圖書館多<br>
+媒體資訊服務系統之管理功能、整合架構、模式方法、發展流程與作業環境<br>
+，以引導系統的開發、使用及管理。同時提出一個在校園網路環境下發展之<br>
+原型系統以為驗證。<br>
+<br>
+<strong>關鍵字:電子圖書館、多媒體文件、物件導向方法</strong>。<br>
+<br>
+<font size="5"><strong>Abtract</strong></font><br>
+<strong><br>
+　　 Due to the rapid advancement of information technologies
+and provision of Internet resources, the needs of digital <br>
+libraries become increasingly significant. The goals of this
+paper are to discuss relative issues of developing multimedia <br>
+information services systems for electronic libraries, and
+propose suitable management functions,integrated architecture, <br>
+modeling techniques, development process, and operating
+environment for guiding the system construction, usage and<br>
+management. Also provided is a p rototype system within the
+university network environment for validating the proposed <br>
+integrated methodologies.<br>
+<br>
+Keywords:electronic library, multimedia document, object-oriented
+method<br>
+<br>
+<br>
+</strong><font size="5"><strong>本文</strong></font><strong><br>
+<br>
+壹‧緒言<br>
+<br>
+　　隨著資訊系統技術進步、網路應用普及，資訊流通越來越快，多媒體型態<br>
+之應用和網路資源亦日益豐富，傳統圖書館之作業方式受到相當大的衝擊。因<br>
+此傳統圖書館（紙本圖書館），經電腦輔助管理之「自動化圖書館」，走向未<br>
+來全球化「電子圖書館」，是必然的趨勢。<br>
+　　「圖書館」可定義為：「將人類思想言行的各項記錄加以蒐集、組織、保<br>
+存，以便於利用的機構」[5]，其中「利用」是指「將適當的資料，在適當的時<br>
+間，供給適當的利用者」，而「各項記錄」則包括各式各樣的媒體。一個傳統<br>
+的圖書館管理系統(Library Management System)應包含下面幾項功能[4]：<br>
+<br>
+1. 採訪 (acquisition)
+─從接受薦購，到向書商訂購、驗收，
+並統計採訪資<br>
+　料。<br>
+2. 編目 (cataloguing)
+─將已驗收之書籍依標準機讀編目格式著錄（例<br>
+　： Chinese MARC ），
+並建檔、製作書標、卡片式目錄、書本式目錄等。<br>
+3. 流通 (circulation)
+─處理讀者之借還書、續借、預約等，
+並製作統計報<br>
+　表。<br>
+4. 期刊管理 (serial control)
+─設定期刊之卷期，以及處理續訂、催缺、期<br>
+　刊裝訂，管理每期之收刊狀況。<br>
+5. 閱覽服務 (reader service)
+─協助讀者解決各種閱覽問題， 提供方便之書<br>
+　目資料查詢，以及收集、整理讀者意見，保持與讀者之互動關係。<br>
+<br>
+　　隨著電腦化書目資料庫日益增多，電子圖書館之概念亦逐漸發展，除符合<br>
+傳統圖書館之定義及功能外，並強調以電子化出版品為館藏主體之管理。迄今<br>
+，電子圖書館可視為電子化資訊資源管理與流通服務之概念及技術發展的結果<br>
+，其實體不限於一固定之場所，可為分佈於網路上之資料庫伺服器，使用者可<br>
+由遠端查詢、擷取並瀏覽儲存其中之多媒體文件。一個前瞻性的電子圖書館應<br>
+具有以下屬性[6]：<br>
+<br>
+1.沒有界限、通透性的虛擬環境。<br>
+2.全球性網路，上有數位化資料網、知識（資訊）銀行、檔案庫及資料庫等。<br>
+3.以寬頻網路傳送多媒體資料給分散式環境下的使用者。<br>
+4.透過人工智慧、專家系統、超文件、Gophers、Client
+Servers、WAIS<br>
+servers、Knowbots 來探索 &quot;cyberspace&quot;。<br>
+5.即時性(Just in Time)的傳遞至全球網路節點。<br>
+6.不受時間、空間限制。<br>
+7.通路(gateways,doorways)、視窗以及智慧型轉換與連接。<br>
+<br>
+　　其資訊利用亦有下列特色：(1)遠距離取用資訊(2)分散式資源共享(3)異質<br>
+性作業環境(4)多媒體文件傳送(5)全文檢索（6）交叉資訊參考（7）使用者自行<br>
+檢索控制等。<br>
+因此，
+一個理想的電子圖書館應能提供多媒體文件之輸入、查詢、關鍵字<br>
+檢索、全文檢索、內容基底查詢 (content-based query)、取出
+(retrive) 、<br>
+探索 (navigate)、展現、瀏覽、版本控制、線上索引
+(online index).. 等功<br>
+能， 並能整合 Internet
+上之網路資源，以多媒體／超媒體之組織及呈現方式<br>
+，提供多視窗、非循序的使用者操作介面，同時對多媒體文件結構及資料庫亦應<br>
+具有完整之管理功能。<br>
+<br>
+　　建構上述理想中之電子圖書館資訊系統所面臨之技術性課題，以應用層、概<br>
+念層及實體層加以分類，可整理如下：<br>
+<br>
+1.
+應用層—超文件／超媒體方法、圖書館系統之功能結構、使用者觀點<br>
+　(user views)與介面(interfaces)整合、使用者及文件界定、著作權等相關法律<br>
+　問題。<br>
+<br>
+2.
+概念層－多媒體資料庫管理、多媒體文件結構、標準文件交換格式、文<br>
+　件標示語言(markup language)、物件導向資料模式、索引(indexing)技術、智慧<br>
+　型文件擷取、內容基底查詢、系統發展流程。<br>
+<br>
+3. 實體層－影像分析及類型辨識 (pattern recognition)、智慧型資源搜尋<br>
+　工具、壓縮解壓縮技術、異質性高速網路、多媒體資料庫作業系統、多媒體軟硬<br>
+　體設備、大量及快速存取裝置、平行及分散處理、多媒體文件編輯工具..等。<br>
+<br>
+　　文獻中關於電子圖書館之發展專案，大致可歸為二類：一是針對館藏之電子<br>
+化，目標在建立並提供電子化館藏供使用者查詢。另一類，則是著眼於網路上資<br>
+源之系統化整理，讓使用者能透過一定的介面找到所需之資源。部份目前發展中<br>
+之電子圖書館計畫，略述如下[8,10,12,16,20]：<br>
+<br>
+1.卡內基美隆大學(Carnegie Mellon University)之 Project
+Mercury<br>
+<br>
+　　始於1989年，目標在建立一個互動式的線上數位影像圖書館系統(interactive<br>
+on-line digital video library system)，使用者可擷取各種科學及數學相關<br>
+視訊檔。<br>
+<br>
+2.ELINOR(Electronic Library Information Online Retrieval)<br>
+　　由De Montfort University 之分校自1992年開始進行，預計在5年內發展一<br>
+個完全自動化環境的電子圖書館，涵蓋常用的書籍、期刊、課程資料、多媒體學<br>
+習軟體等。<br>
+<br>
+3.Ohio LINK<br>
+<br>
+　　俄亥俄圖書館與資訊網路(Ohio Library and
+Information Network，Ohio<br>
+LINK)係將17所大學的校園網路及州立圖書館予以連接，目前已有2,500個使用者<br>
+，進一步將開放給當地的社區學院、私立學院及大學、公共圖書館及其他機構參<br>
+與。<br>
+<br>
+4.其他大學之計畫<br>
+<br>
+　　美國目前尚有密西根大學以建構大量、連續性的多媒體資料庫為重點；而史<br>
+丹福大學則著重在網路資源整合、資訊分享及通訊架構方面；加州大學Santa<br>
+Barbara 之 Project Alexandria
+主要目標為建立地圖、影像資料庫。<br>
+　　目前上述電子圖書館專案計畫多數著重於館藏電子化工作，或某些技術課題<br>
+之解決（如：影像處理、大型資料庫建置或網路連接等），缺乏一套整合性的系<br>
+統架構、模式方法、發展流程、作業環境及完整之多媒體文件結構分析。因此，<br>
+本研究之目的即在多媒體資訊服務之需求背景下，以整體性系統的發展與應用為<br>
+重點，提出電子圖書館多媒體資訊服務系統之管理功能、整合架構、概念模式方<br>
+法、系統發展流程與作業環境，以引導系統的開發、使用及管理。所採用之方法<br>
+如下：<br>
+<br>
+1. 開放性層次結構 (Layer Structure)
+方法，規範系統發展程序並設定系統<br>
+　規格與標準。<br>
+2.超媒體(Hypermedia)方法，設計使用者介面及畫面之組織與呈現方式。<br>
+3.物件導向(Object-Oriented)方法，建立系統之概念及實體模式。<br>
+4.多媒體資料庫(Multimedia Database)方法，建立系統之資料庫結構及管<br>
+　理功能。<br>
+5.軟體整合(Software Integration)方法，建立系統實體發展及作業環境。<br>
+6.系統發展原型法(Prototyping)，逐次發展完成整體應用系統。<br>
+<br>
+　　本文共分五節，除第一節為緒言外，第二節為電子圖書館多媒體資訊服務系統<br>
+之架構與功能，第三節為物件導向多媒體資訊系統發展方法，第四節為原型系統發<br>
+展，第五節則為結論與未來研究方向。<br>
+<br>
+<br>
+<br>
+貳‧電子圖書館多媒體資訊服務系統之架構與功能<br>
+<br>
+　　從圖書館作業的演變來看，以紙本為主要館藏之傳統圖書館，大多已做到自<br>
+動化作業方式（稱為「自動化圖書館」），而未來的「虛擬圖書館」則完全為電<br>
+子化的館藏，透過網路達到資訊服務的功能。本研究之「電子圖書館多媒體資訊<br>
+服務系統」則希望能整合「自動化圖書館」及「虛擬圖書館」之功能，建立一個<br>
+適合現有一般圖書館使用並具備未來數位化圖書館發展潛力之完整架構，整合後<br>
+之系統架構如圖1，各項功能說明如下：<br>
+<br>
+圖1.電子圖書館多媒體資訊服務系統架構<br>
+<br>
+<br>
+「1.圖書館簡介」和「2.設施及服務導覽」：屬於多媒體資訊服務，透過多媒體<br>
+　　呈現方式，介紹圖書館相關設施及服務所在位置和使用規則。<br>
+「 3. 借還書及文件傳遞」：屬於出納流通功能，
+包含傳統書籍借還書作業及<br>
+　　電子文件傳遞功能。<br>
+「 4.
+館藏資料導覽」：將傳統圖書館書籍置放方式透過超媒體軟體，
+在電腦<br>
+　　畫面上帶領讀者由樓層到刊架位置，進而瀏覽館藏之全文或相關資訊。
+此<br>
+　　部份為虛擬圖書館結合傳統圖書館作業方式之表現。<br>
+「 5.
+館藏及網路資料檢索」：包含對館藏之基本資料、關鍵字、內容或全文等<br>
+　　之檢索功能，屬閱覽服務項目。<br>
+「 6.
+館藏資料維護」：包含從採訪到編目的過程，也就是館藏收集、整理及建<br>
+　　立資料庫之作業。<br>
+「 7. 網路資源服務」：結合 Internet
+上相關之圖書館資訊服務資源，提供網<br>
+　　路連接介面及建立索引之功能。<br>
+「 8.
+讀者服務」：將一些特殊服務歸類在此，包含讀者意見投書、薦購單及新<br>
+　　近館藏介紹等。<br>
+<br>
+<br>
+參‧物件導向多媒體資訊系統發展方法<br>
+<br>
+一、系統發展層次架構<br>
+<br>
+　　本研究採用層次化的系統發展架構[17]，共分為應用層、概念層及實體層，<br>
+以便涵蓋且表現系統應用、資料模式及實體環境等三個層面的內容及對應關係，<br>
+其架構如圖2。<br>
+<br>
+1.應用層（需求分析）<br>
+<br>
+　　指使用者對各種圖書館資訊服務的需求分析，制訂功能、作業、畫面及介面<br>
+等需求規格。需確認與定義的物件含資料項目、資訊畫面、管理功能及操作介面<br>
+等。<br>
+<br>
+<br>
+圖2、系統發展層次架構<br>
+<br>
+2.概念層（概念設計）<br>
+<br>
+　　概念層則是整合所有使用者觀點及使用者介面，以物件導向設計方法來建構<br>
+系統概念模式，含畫面、介面及資料庫物件之屬性(attributes)、方法(methods)<br>
+及物件間之關係(relationships)。<br>
+<br>
+3.實體層（建置及實體設計）<br>
+<br>
+　　以概念模式的結果，運用各種多媒體軟硬體設備及網路環境來進行畫面、介<br>
+面、功能、流程、程式及資料庫檔案設計與對應，以建構實體系統。<br>
+<br>
+4.邏輯對映(logical mapping)及實體對映(physical mapping)<br>
+<br>
+　　邏輯對映是指將每個畫面使用之資料及取出途徑，對應至系統概念模式。實<br>
+體對映則是指將概念資料模式轉換為軟硬體實作之物件模式，並透過各種軟硬體<br>
+及通訊環境來完成。<br>
+<br>
+二、物件導向分析及設計步驟<br>
+<br>
+　　系統發展之物件導向分析及設計步驟如下[13]：<br>
+<br>
+1.確認電子圖書館作業功能及流程<br>
+2.收集和定義多媒體使用者觀點及介面需求<br>
+3.確定資料、畫面、功能、介面等物件<br>
+4.定義物件的屬性及操作(operation)<br>
+5.建立物件目錄(object directory)<br>
+6.定義物件間之關係<br>
+7.建立整合性之物件類別結構(class structure)，含多媒體文件及資料<br>
+庫結構<br>
+8.定義資料庫與畫面、介面之邏輯存取對映(logical
+access mapping)關係<br>
+9.設計系統功能結構(functional structure)<br>
+10.設計系統操作流程(operational process)<br>
+11.確認並整合系統發展工具及通訊環境<br>
+12.設計含軟硬體及程式之實體對映程序<br>
+13.設計及製作多媒體展現之格式<br>
+14.原型系統建置、測試、調整(tuning)及擴充<br>
+15.系統完成及文件設計、製作<br>
+<br>
+　　步驟中之1,2
+兩階段工作重點及需求強調館藏內容之親和性查詢及瀏覽，相<br>
+關之資料項目及使用者觀點依系統服務功能分類整理如下：<br>
+<br>
+(1)圖書館簡介－含外觀圖、沿革、使用規則、系統簡介．．等。<br>
+(2)設施及服務導覽－含樓層平面圖、公共設施分佈圖及說明、各項服務位<br>
+　置圖及說明．．等。<br>
+(3)館藏資料導覽－含館藏之樓層分佈、各樓層館藏類別分佈圖、各類別館<br>
+　藏之刊架分佈圖、各刊架之館藏分佈、各館藏之基本資料、館藏之文件內容<br>
+　．．等。<br>
+(4) 館藏及網路資料檢索－含館藏基本資料檢索、
+關鍵字檢索 / 文件清單 /<br>
+　文件內容、 內容基底檢索 / 文件清單 /
+文件內容、全文檢索 / 文件清單<br>
+　/ 文件內容．．等。<br>
+(5)館藏資料維護－含館藏基本資料、館藏架位安排資料．．等。<br>
+(6)網路資源服務－含WWW/Gopher/WAIS之使用說明、地理位置/國別分佈、<br>
+　類別（依資訊特性）分佈、加入館藏資料庫資訊索引、文件內容．．等。<br>
+(7)讀者服務－含薦購資料、意見欄、新近館藏介紹．．等。<br>
+　介面需求含選單（長條選單、下拉選單、畫面選單）、按鈕（換頁、執行、<br>
+　條件．．）、視窗（依大小分級，可否捲動）及對話框．．等。<br>
+<br>
+<br>
+三、資料模式方法<br>
+<br>
+　　本系統設計中應用、概念及實體三層之資訊表現模式，分別採用節點—鍵結<br>
+模式(Node-Link Model)、物件導向模式及關聯資料模式，以發揮各層資訊特性<br>
+並有利於系統建置。說明如下：<br>
+<br>
+(一)節點—鍵結模式<br>
+<br>
+　　本系統應用層之資料、畫面及介面關係採用超媒體方法中之節點—鍵結模式<br>
+加以表現。超媒體方法以非線性資訊組織及交互參考為其特色，使用者可透過親<br>
+和性之視窗作業介面，以非循序性及自我控制方式，查詢並瀏覽多媒體文件。本<br>
+研究中引用二層次節點—鍵結模式[15]，分別描述資料項目之關係，及由資料項<br>
+目組成畫面並加上介面後之畫面介面關係。<br>
+<br>
+　　節點及鍵結之型態簡要說明如下：<br>
+<br>
+節點型態(Node types)：<br>
+<br>
+資料節點(Data node)—代表文件之基本內容，可為多媒體資料。<br>
+畫面節點(Views node)—表示一個資訊畫面，由資料、選單、按鈕等組合而成。<br>
+條件節點(Condition node)—包含條件或規則以啟動或連接至其他畫面節點。<br>
+選單節點(Menu node)—可為長條選單、下拉選單或畫面選單，通常與其他畫面有組合關係。<br>
+按鈕節點(Button node)—代表一個按鈕選項，可執行一特定作業功能。<br>
+對話節點(Dialog node)—代表互動式的對話框。<br>
+<br>
+鍵結型態(Link types)<br>
+<br>
+繼承鍵結(Is-a link)—表示節點間的繼承關係。<br>
+組合鍵結(Has-a link)—表示節點間的組合關係。<br>
+特例鍵結(Instance link)—表示此節點為其他節點的特例。<br>
+參考鍵結(Reference link)—表示節點間的相互參考關係。<br>
+選擇性鍵結(Option link)—表示所連接之節點視情況可有可無。<br>
+瀏覽鍵結(Browse link)—此鍵結讓使用者能瀏覽系列畫面節點。<br>
+搜尋鍵結(Search link)—指此鍵結所連接之節點將可進行關鍵字查詢、全文檢索或內容基底查詢等。<br>
+<br>
+　　館藏文件之資料項目層次及畫面介面關係層次等之二層次節點—鍵結模式關<br>
+係圖例，如圖3及圖4。<br>
+<br>
+(二)物件導向資料模式<br>
+<br>
+　　節點—鍵結模式中之資料項目、使用者觀點及介面經整合及一般化、抽象化<br>
+處理後，可歸納成使用者介面、資訊畫面及資料庫三大類物件類別，以物件導向<br>
+概念資料模式表現部份類別相互間之繼承、組合及參考關係，可得圖5
+[13]，其<br>
+中文件資料庫之物件導向資料模式如圖6，結構單元含內容(content)及格式<br>
+(layout)兩部份，格式中基本的呈現單位—頁，則分為平面印刷為主的列印格式<br>
+頁及以多媒體展現為主的電子格式頁[14]。<br>
+<br>
+(三)關聯資料模式<br>
+<br>
+　　如實體建置時使用關聯式資料庫管理系統工具，則需將物件導向資料模式轉<br>
+換成關聯資料模式，並應用 BLOB(Binary Large Object)概念來處理多媒體資料<br>
+之定義及存取，圖7為部份實體對應之關聯資料庫模式。<br>
+<br>
+四、系統功能流程結構關係圖<br>
+<br>
+　　本系統各項服務功能、介面方式及資訊內容等之整體結構及流程如圖8。<br>
+<br>
+<br>
+<br>
+肆‧原型系統發展<br>
+<br>
+一、原型系統軟硬體通訊環境<br>
+<br>
+　　本系統之原型係以現有之校園網路為建<br>
+構環境，透過大樓內部之乙太網路連結 FDDI
+主幹，藉以利用網路設備連接台<br>
+灣學術網路(TANet)及網際網路(Internet)，同時整合校內校外相關之網路資源<br>
+（如：WWW、Gopher、WAIS)。其系統環境如圖9。<br>
+<br>
+　　本原型系統以 PC486 個人電腦及Microsoft 中文
+Windows 3.1來開發<br>
+「電子圖書館資訊服務系統(ELIBSS)」之使用者介面及資料庫作業環境，軟體<br>
+整合作業環境如圖10，以 Asymetrix 之ToolBook 3.0
+版超媒體軟體作為發<br>
+展工具，並透過 TCP/IP 網路軟體Trumpet TCPMAN 來連結
+WWW Server，以<br>
+WWW Browser 軟體 NetScape 瀏覽 HTML 格式之文件。<br>
+圖3、館藏資料項目層次之節點—鍵結模式<br>
+<br>
+二、畫面流程<br>
+<br>
+　　原型系統基本上以圖8之系統結構及本校圖書館作業方式為藍圖，但受限於<br>
+發展時間及人力，予以部份簡化。部分畫面流程說明如下：<br>
+<br>
+　　圖11為系統主畫面，可由畫面中之按鈕選項選擇進入各服務功能畫面。其中<br>
+，館藏資料導覽可經由樓層、刊架位置來搜尋館藏(如圖12)，或由類別、型態之<br>
+選擇直接進入館藏架位(如圖13a)。系統亦提供由類別、作者、出版者、關鍵字<br>
+等選項之多規則查詢功能，讓使用者能擷取所需之館藏資料(如圖13b)，進而透<br>
+過相關之資訊按鈕如：作者、目錄等，瀏覽、探索作者介紹、歷年著作及本文內<br>
+容(如圖13c、圖13d)。網路資源服務畫面如圖14。<br>
+<br>
+<br>
+伍‧結論與未來研究方向<br>
+<br>
+　　本研究從現有電子圖書館之定義、特性、多媒體文件結構、分散式環境等方<br>
+面來探討一個功能完整之「電子圖書館多媒體資訊服務系統」所應具備及考量之<br>
+各種主題。並以層次化之系統發展方法，整合超媒體及物件導向模式方法來展現<br>
+畫面、介面及資料庫關係，同時以軟體整合方法建構一原型系統。<br>
+　<br>
+　未來值得研究及探討的主題有：<br>
+<br>
+1.電子文件分析及編輯之格式與標準<br>
+<br>
+　　文件數位化之格式分析與內容擷取方法，文件編輯之格式標準如：SGML、ODA<br>
+、HyTime、MHEG、HTML．．等之演進及整合。<br>
+<br>
+圖4、整合使用者觀點與介面之節點—鍵結模式<br>
+<br>
+<br>
+2.多媒體資料庫管理<br>
+<br>
+　　整合館藏多媒體文件之聲音、圖片、影像、動畫、動影等資料，以統一之資<br>
+料庫系統規範、管理、存取及控制。<br>
+<br>
+3.寬頻網路建構與傳輸<br>
+<br>
+　　發展高速、寬頻網路，並利用壓縮／解壓縮技術減少資料量，加速傳輸。<br>
+<br>
+4.智慧型資料查詢及WWW系統建置<br>
+<br>
+　　在分散式環境下，透過單一的使用者介面，自動查詢所有網路上異質環境中<br>
+儲存的資訊資源，此便是通透查詢。另一方面，內容基底查詢是依使用者需求，<br>
+以文件內涵做為查詢之依據，由於多媒體資料型態複雜，如何辨識其內涵及特性<br>
+，仍有待突破。<br>
+<br>
+<br>
+圖5、物件導向概念模式圖<br>
+<br>
+圖6、文件(document)之物件導向資料模式<br>
+<br>
+圖7.關聯資料模式圖<br>
+<br>
+圖8、系統流程及功能結構圖<br>
+<br>
+圖9、系統發展及應用環境圖<br>
+<br>
+圖10、原型系統軟體整合環境<br>
+<br>
+圖11、系統主畫面<br>
+<br>
+圖12a、館藏資料導覽之一<br>
+<br>
+圖12b、館藏資料導覽之一<br>
+<br>
+圖13a、館藏資料導覽之一<br>
+<br>
+圖13b、館藏資料導覽之二<br>
+<br>
+圖13c、館藏資料導覽之三<br>
+<br>
+圖13d、館藏資料導覽之四<br>
+<br>
+圖14、網路資源服務<br>
+<br>
+<br>
+<br>
+參考文獻<br>
+<br>
+[1]Barker,P.,&quot;Electronic Books and Libraries of the
+Future,&quot;The Electronic Library,10(3),June 1992, pp.139-<br>
+　149.<br>
+<br>
+[2]Barker,P.,&quot;Electronic Libraries─Visions of the
+Future,&quot;The Electronic Library, 12(4), August 1994,pp.221-　230.<br>
+<br>
+[3]Corbin,J.,&quot;Technical Services for the Electronic
+Library,&quot;Library Administration &amp; Management, Spring <br>
+　1992,pp.86-90.<br>
+<br>
+[4]Fisher,S. and Rowley,J.,&quot;Management Information and
+Library Management Systems: an Overview,&quot;The <br>
+　Electronic 　Library,12(2),April 1994,pp.109-116.<br>
+<br>
+[5]Hurt,C.S.,&quot;A Vision of the Library of the 21st Centry,
+&quot;Journal of Library Administration, 15(3),1992, pp.7.<br>
+<br>
+[6]King,H.,&quot;Walls Around the Electronic Library, &quot;The
+Electronic Library,11(3), June 1993, pp.165-174.<br>
+<br>
+[7]Lancaster,F.W.,&quot;Whither Libraries? or Wither Libraries,
+&quot;Colleage &amp; Research Libraries, 50(4), 　<br>
+　1989,pp.407.<br>
+<br>
+[8]Landoni,M. and Catenazzi,N.,&quot;Hyper-Books and Visual-
+Books in an Electronic Library, &quot;The Electronic <br>
+　Library,11(3),June 1993,pp.175-186.<br>
+<br>
+[9]Obraczka,K.,Danzig,P.B.,and Li,S.H., &quot;Internet Resource
+Discovery Services, &quot;IEEE Computer, <br>
+　sep.1993,pp.8-22.<br>
+<br>
+[10]Powell,J.,&quot;Adventures with the World Wide Web: Creating
+a Hypertext Library Information System, <br>
+　&quot;DATABASE, 　Feb. 1994,pp.59-66.<br>
+<br>
+[11]Roes,H. and Dijkstra,J.,&quot;Ariadne:the Next Generation of
+Electronic Document Delivery Systems,&quot;The Electronic
+Library, 　12(1),Jan. 1994, pp.13-19.<br>
+<br>
+[12]Saunders,L.M.,&quot;The Virtual Library Today,&quot;Library
+Administration &amp; Management,6(2), Spring 1992, pp.66-70.<br>
+<br>
+[13]Yu,C.C.,&quot;An Object-Oriented Development Process for
+Multimedia Videotex Applications, &quot;Proceedings of the 1993
+Pan <br>
+　Pacific Conference　on Information Systems, May31-June1,1993,
+Kaohsiung, Taiwan, R.O.C.,pp.25-33.<br>
+<br>
+[14]Yu,C.C.,&quot;Designing a Multimedia Database for Electronic　Publication
+Systems,&quot;Journal of National Chengchi <br>
+　University,67,Oct.1993, pp.743-764.<br>
+<br>
+[15]Yu,C.C.,&quot;Developing a Multimedia Information System for　Digital
+Library Services,&quot;working 　paper,1995, National 　Chengchi　University.<br>
+<br>
+[16]Zhao,D.G.,&quot;The ELINOR Electronic Library System&quot;,
+The　Electronic Library,12(5), Oct.1994,pp.289-<br>
+　294.<br>
+<br>
+[17]余千智,&quot;超媒體專家決策支援系統在軟體專案管理領
+域之應用,&quot;83年度亞太工業工程研討會論文<br>
+　集,1994 年12月17-18日,台南.<br>
+<br>
+[18]苗惠芬,&quot;圖書館的未來趨勢：電子圖書館,&quot;台北市立
+圖書館訊，11(1),民國82年9月,pp.18-32.<br>
+<br>
+[19]黃鴻珠,&quot;增進電子圖書館效益之道：由網路文件資料之應用談起,&quot;電子圖書館與資訊網路研討會會<br>
+　議論文集,民國83年12月.<br>
+<br>
+[20]薛理桂,&quot;電子圖書館：新近發展及對圖書館事業的影響,&quot;圖書與資訊學刊,民國83年10月,pp.1-15.<br>
+<br>
+</strong></p>
+</body>
+</html>
